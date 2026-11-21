@@ -1,16 +1,411 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Archivo Histórico Hondureño. Memoria, documentación y reflexión sobre la historia de Honduras.">
 <title>Archivo Histórico Hondureño</title>
+<style>
+:root {
+ --navy:#0c2030;--blue:#173e55;--gold:#d6ad60;
+ --cream:#f1eee6;--paper:#fffdf8;--ink:#27343c;
+ --red:#963d3d;--muted:#73808a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);
+ font-family:Georgia,serif;line-height:1.65}
+a{color:inherit}
+header{background:var(--navy);color:white;padding:17px 5%;
+ display:flex;justify-content:space-between;align-items:center;
+ flex-wrap:wrap;gap:14px}
+.brand{font:bold 14px Arial;letter-spacing:1px}
+nav{display:flex;flex-wrap:wrap;gap:15px}
+nav a{text-decoration:none;font:13px Arial;color:#e8edf0}
+nav a:hover{color:var(--gold)}
+.hero{min-height:510px;padding:75px 7%;display:flex;
+ flex-direction:column;justify-content:center;align-items:center;
+ text-align:center;color:white;
+ background:linear-gradient(130deg,#071725,#174b65)}
+.eyebrow{color:var(--gold);letter-spacing:4px;font:12px Arial}
+.hero h1{font-size:clamp(38px,7vw,72px);line-height:1.08;
+ max-width:900px;margin:20px auto}
+.hero p{max-width:740px;font-size:18px;color:#dce6eb}
+.motto{max-width:800px;margin-top:25px;padding-top:20px;
+ border-top:1px solid #ffffff55;color:#f0d18e;
+ font-size:17px;font-style:italic}
+.btn{display:inline-block;background:var(--gold);color:#162b39;
+ padding:12px 22px;margin-top:20px;text-decoration:none;
+ font:bold 13px Arial;border-radius:3px}
+main{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:58px 0}
+.kicker{color:var(--red);font:bold 11px Arial;
+ letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(28px,4vw,40px);color:var(--navy);
+ line-height:1.2;margin:10px 0 18px}
+h3{color:var(--navy)}
+.intro{max-width:800px;font-size:18px}
+.notice{background:#f9edcf;border-left:4px solid var(--gold);
+ padding:17px 20px;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:17px;margin-top:25px}
+.card{background:var(--paper);border:1px solid #e3ddcf;
+ padding:21px;border-radius:4px}
+.card p{font-size:14px}
+.tag{font:bold 10px Arial;color:var(--red);letter-spacing:1px}
+.dark{background:var(--navy);color:white;margin:0 -22px;
+ padding:55px max(22px,calc((100% - 1076px)/2))}
+.dark h2{color:white}
+.dark .kicker{color:var(--gold)}
+.search{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+.search input,.search select{padding:13px;border:1px solid #ccc;
+ border-radius:3px;background:white;font-size:14px}
+.search input{flex:1;min-width:190px}
+.timeline{border-left:2px solid var(--gold);margin-left:10px;
+ padding-left:25px}
+.event{position:relative;background:var(--paper);
+ border:1px solid #e3ddcf;padding:20px;margin-bottom:23px}
+.event:before{content:"";position:absolute;left:-33px;top:23px;
+ width:12px;height:12px;background:var(--gold);border-radius:50%}
+.date{font:bold 11px Arial;color:var(--red)}
+.source{font:bold 12px Arial;color:var(--blue)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:15px;margin-top:25px}
+.photo{min-height:180px;padding:18px;display:flex;
+ flex-direction:column;justify-content:end;color:white;
+ background:linear-gradient(145deg,#31566a,#102638);
+ border:1px solid #456273}
+.photo:nth-child(2){background:linear-gradient(145deg,#79664d,#302b29)}
+.photo:nth-child(3){background:linear-gradient(145deg,#536d61,#1d332f)}
+.photo:nth-child(4){background:linear-gradient(145deg,#795251,#35272b)}
+.photo small{color:#f0d18e;font:11px Arial}
+.photo strong{font-size:20px}
+.hidden{display:none}
+.small{font-size:12px;color:var(--muted)}
+.sources li{margin:13px 0}
+.sources a{color:var(--blue)}
+footer{background:#081824;color:#dce4e8;text-align:center;
+ padding:42px 20px;font-size:13px}
+footer strong{color:var(--gold)}
+@media(max-width:600px){
+ header{justify-content:center}
+ nav{justify-content:center}
+ .hero{padding:60px 20px}
+}
+</style>
 </head>
-<body style="background:#102638;color:white;text-align:center;font-family:Arial;padding:60px 15px">
-<h1>🇭🇳 ARCHIVO HISTÓRICO HONDUREÑO</h1>
-<h2>Recordar para comprender.</h2>
-<p>Comprender para no repetir.</p>
-<p>Nuestra historia merece ser recordada.</p>
+<body>
+
+<header>
+ <div class="brand">🇭🇳 ARCHIVO HISTÓRICO HONDUREÑO</div>
+ <nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#historia">Historia</a>
+  <a href="#cronologia">Cronología</a>
+  <a href="#expedientes">Expedientes</a>
+  <a href="#galeria">Galería</a>
+  <a href="#fuentes">Fuentes</a>
+ </nav>
+</header>
+
+<div class="hero" id="inicio">
+ <div class="eyebrow">MEMORIA DOCUMENTAL DE UNA NACIÓN</div>
+ <h1>ARCHIVO HISTÓRICO HONDUREÑO</h1>
+ <p>
+  Una memoria abierta de los acontecimientos políticos,
+  sociales y humanos que han marcado la historia de Honduras.
+ </p>
+ <div class="motto">
+  QUE CAMBIEN LOS GOBIERNOS CAÓTICOS.
+  LOS ERRORES NO LOS CAMBIAREMOS EN LA HISTORIA,
+  PERO SÍ EN EL FUTURO.
+ </div>
+ <a class="btn" href="#cronologia">EXPLORAR EL ARCHIVO</a>
+</div>
+
+<main>
+
+<section id="historia">
+ <div class="kicker">Nuestra misión</div>
+ <h2>La memoria también es justicia</h2>
+ <p class="intro">
+  Este espacio busca conservar y organizar documentación sobre
+  acontecimientos que marcaron a Honduras: crisis políticas,
+  protestas, víctimas, defensores de derechos humanos,
+  desapariciones, homicidios y denuncias de corrupción.
+ </p>
+ <div class="notice">
+  <strong>Independencia y responsabilidad:</strong>
+  este proyecto no representa a ningún partido ni gobierno.
+  Los hechos comprobados, las denuncias, los testimonios
+  y las investigaciones pendientes serán identificados
+  por separado. No se atribuirá culpabilidad sin pruebas.
+ </div>
+</section>
+
+<section id="cronologia">
+ <div class="kicker">Línea del tiempo</div>
+ <h2>Los acontecimientos que marcaron Honduras</h2>
+ <p>Una cronología inicial que crecerá con investigaciones y documentos.</p>
+
+ <div class="search">
+  <input type="search" id="buscar"
+   placeholder="Buscar por fecha o acontecimiento...">
+  <select id="categoria">
+   <option value="todos">Todos los temas</option>
+   <option value="politica">Política</option>
+   <option value="derechos">Derechos humanos</option>
+   <option value="protestas">Protestas</option>
+   <option value="justicia">Justicia</option>
+  </select>
+ </div>
+
+ <div class="timeline">
+  <article class="event" data-category="politica">
+   <div class="date">28 DE JUNIO DE 2009 · POLÍTICA</div>
+   <h3>La crisis política de 2009</h3>
+   <p>
+    La salida forzada del presidente Manuel Zelaya produjo
+    una ruptura del orden constitucional y abrió una profunda
+    crisis política y social en Honduras.
+   </p>
+   <a class="source" href="https://www.oas.org/es/cidh/"
+    target="_blank" rel="noopener">Consultar documentación de la CIDH →</a>
+  </article>
+
+  <article class="event" data-category="derechos">
+   <div class="date">2 DE MARZO DE 2016 · DERECHOS HUMANOS</div>
+   <h3>Asesinato de Berta Cáceres</h3>
+   <p>
+    La defensora indígena y ambientalista Berta Cáceres
+    fue asesinada. Su caso tuvo repercusión internacional
+    y puso atención sobre los riesgos que enfrentan
+    las personas defensoras del territorio.
+   </p>
+   <a class="source" href="https://www.globalwitness.org/"
+    target="_blank" rel="noopener">Consultar investigaciones de Global Witness →</a>
+  </article>
+
+  <article class="event" data-category="protestas">
+   <div class="date">2017 · CRISIS ELECTORAL</div>
+   <h3>Protestas posteriores a las elecciones</h3>
+   <p>
+    El proceso electoral estuvo acompañado de una crisis
+    política, manifestaciones y denuncias de violaciones
+    de derechos humanos. Se documentarán los hechos
+    y las víctimas individualmente.
+   </p>
+   <a class="source" href="https://www.ohchr.org/es/countries/honduras"
+    target="_blank" rel="noopener">Consultar Naciones Unidas →</a>
+  </article>
+
+  <article class="event" data-category="protestas">
+   <div class="date">2019 · MOVILIZACIONES SOCIALES</div>
+   <h3>Protestas y denuncias de represión</h3>
+   <p>
+    Durante 2019 se desarrollaron movilizaciones sociales
+    y manifestaciones en distintas partes del país.
+    Se incorporarán informes, registros de afectados
+    y documentación disponible.
+   </p>
+   <a class="source" href="https://www.ohchr.org/es/countries/honduras"
+    target="_blank" rel="noopener">Consultar informes de Naciones Unidas →</a>
+  </article>
+
+  <article class="event" data-category="politica">
+   <div class="date">2021–2022 · TRANSICIÓN POLÍTICA</div>
+   <h3>Elecciones y cambio de gobierno</h3>
+   <p>
+    Las elecciones generales de 2021 marcaron una nueva etapa
+    política. Se incorporarán antecedentes, resultados
+    y acontecimientos documentados de la transición.
+   </p>
+   <a class="source" href="https://www.oas.org/es/"
+    target="_blank" rel="noopener">Consultar documentación de la OEA →</a>
+  </article>
+ </div>
+ <p class="small">
+  Esta es una selección introductoria, no una relación completa
+  de víctimas, acontecimientos o protestas.
+ </p>
+</section>
+
+<div class="dark" id="expedientes">
+ <div class="kicker">Archivo temático</div>
+ <h2>Una historia que merece ser documentada</h2>
+ <div class="grid">
+  <article class="card">
+   <span class="tag">SECCIÓN 01</span>
+   <h3>Víctimas de protestas</h3>
+   <p>Registro de personas fallecidas o heridas, con fecha, lugar, contexto y fuentes.</p>
+  </article>
+  <article class="card">
+   <span class="tag">SECCIÓN 02</span>
+   <h3>Defensores de derechos humanos</h3>
+   <p>Historias de quienes defendieron comunidades, territorios y derechos fundamentales.</p>
+  </article>
+  <article class="card">
+   <span class="tag">SECCIÓN 03</span>
+   <h3>Casos emblemáticos</h3>
+   <p>Expedientes de casos que marcaron la memoria nacional y el estado de sus investigaciones.</p>
+  </article>
+  <article class="card">
+   <span class="tag">SECCIÓN 04</span>
+   <h3>Corrupción y poder</h3>
+   <p>Auditorías, investigaciones, procesos judiciales y denuncias debidamente atribuidas.</p>
+  </article>
+  <article class="card">
+   <span class="tag">SECCIÓN 05</span>
+   <h3>Desapariciones y homicidios</h3>
+   <p>Casos documentados con respeto a las víctimas y sus familias.</p>
+  </article>
+  <article class="card">
+   <span class="tag">SECCIÓN 06</span>
+   <h3>Memoria de las comunidades</h3>
+   <p>Testimonios y acontecimientos locales de las distintas regiones de Honduras.</p>
+  </article>
+ </div>
+</div>
+
+<section>
+ <div class="kicker">Investigación en desarrollo</div>
+ <h2>Referencias pendientes de verificación</h2>
+ <div class="grid">
+  <article class="card">
+   <span class="tag">PENDIENTE</span>
+   <h3>Caso de una muerte en Sabá, Colón</h3>
+   <p>
+    Referencia aportada para investigación.
+    Se necesita confirmar identidad, fecha, circunstancias
+    y documentación independiente.
+   </p>
+  </article>
+  <article class="card">
+   <span class="tag">PENDIENTE</span>
+   <h3>Estudiante que protestó contra JOH</h3>
+   <p>
+    Referencia a una estudiante que habría sido asesinada
+    después de participar en una protesta. Se debe verificar
+    su identidad, cronología y fuentes.
+   </p>
+  </article>
+ </div>
+ <p class="small">
+  Estos registros no implican conclusiones sobre responsables
+  ni circunstancias.
+ </p>
+</section>
+
+<section id="galeria">
+ <div class="kicker">Memoria visual</div>
+ <h2>Galerías fotográficas</h2>
+ <p>
+  Las galerías se completarán con fotografías históricas auténticas,
+  identificadas por fecha, lugar, autor o medio de procedencia
+  y condiciones de uso.
+ </p>
+ <div class="gallery">
+  <div class="photo">
+   <small>GALERÍA 01</small>
+   <strong>Honduras 2009</strong>
+   <span>Material documental por incorporar</span>
+  </div>
+  <div class="photo">
+   <small>GALERÍA 02</small>
+   <strong>Protestas sociales</strong>
+   <span>Material documental por incorporar</span>
+  </div>
+  <div class="photo">
+   <small>GALERÍA 03</small>
+   <strong>Defensores de derechos humanos</strong>
+   <span>Material documental por incorporar</span>
+  </div>
+  <div class="photo">
+   <small>GALERÍA 04</small>
+   <strong>Corrupción y poder</strong>
+   <span>Documentos e imágenes por incorporar</span>
+  </div>
+ </div>
+ <p class="small">
+  Estas tarjetas son espacios de organización, no fotografías históricas.
+ </p>
+</section>
+
+<section>
+ <div class="kicker">Método documental</div>
+ <h2>La verdad exige responsabilidad</h2>
+ <div class="grid">
+  <article class="card">
+   <h3>Verificación</h3>
+   <p>Contrastar la información con documentos y fuentes independientes.</p>
+  </article>
+  <article class="card">
+   <h3>Contexto</h3>
+   <p>Identificar fechas, lugares, antecedentes y circunstancias.</p>
+  </article>
+  <article class="card">
+   <h3>Transparencia</h3>
+   <p>Distinguir hechos comprobados, denuncias, testimonios y asuntos pendientes.</p>
+  </article>
+ </div>
+</section>
+
+<section id="fuentes" class="sources">
+ <div class="kicker">Consulta documental</div>
+ <h2>Fuentes de referencia</h2>
+ <p>
+  Organismos y organizaciones que ofrecen documentación
+  para investigar los acontecimientos.
+ </p>
+ <ul>
+  <li><a href="https://www.ohchr.org/es/countries/honduras"
+   target="_blank" rel="noopener">Naciones Unidas – Derechos Humanos en Honduras</a></li>
+  <li><a href="https://www.oas.org/es/cidh/"
+   target="_blank" rel="noopener">Comisión Interamericana de Derechos Humanos</a></li>
+  <li><a href="https://www.oas.org/es/"
+   target="_blank" rel="noopener">Organización de los Estados Americanos</a></li>
+  <li><a href="https://www.cofadeh.org/"
+   target="_blank" rel="noopener">COFADEH</a></li>
+  <li><a href="https://www.globalwitness.org/"
+   target="_blank" rel="noopener">Global Witness</a></li>
+ </ul>
+</section>
+
+<section>
+ <div class="notice">
+  <strong>Recordar para comprender. Comprender para no repetir.</strong>
+  <br>
+  El pasado es imborrable, pero el futuro todavía está en nuestras manos.
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <strong>ARCHIVO HISTÓRICO HONDUREÑO</strong>
+ <p>Memoria, documentación y reflexión para las futuras generaciones.</p>
+ <p>Un proyecto documental independiente.</p>
+ <p>© 2026 · Archivo Histórico Hondureño</p>
+</footer>
+
+<script>
+const buscar=document.getElementById("buscar");
+const categoria=document.getElementById("categoria");
+const eventos=document.querySelectorAll(".event");
+
+function filtrar(){
+ const texto=buscar.value.toLowerCase().trim();
+ const tipo=categoria.value;
+ eventos.forEach(e=>{
+  const coincideTexto=e.innerText.toLowerCase().includes(texto);
+  const coincideTipo=tipo==="todos"||e.dataset.category===tipo;
+  e.classList.toggle("hidden",!(coincideTexto&&coincideTipo));
+ });
+}
+buscar.addEventListener("input",filtrar);
+categoria.addEventListener("change",filtrar);
+</script>
+
 </body>
 </html>
